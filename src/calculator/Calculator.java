@@ -16,11 +16,21 @@ class Calculator {
             if (op == "*") {
                 expression[i - 1] = String.valueOf(a * b);
                 expression[i] = "+";
-                expression[i + 1] = "0";
-            } else if (op == "/") {
-                expression[i - 1] = String.valueOf(a / b);
-                expression[i] = "+";
-                expression[i + 1] = "0";
+                if (expression.length <= i + 2) {
+                    if (expression[i + 2] == "*" || expression[i + 2] == "/") {
+                        expression[i + 1] = "1";
+                    } else {
+                        expression[i + 1] = "0";
+                    }
+                } else if (op == "/") {
+                    expression[i - 1] = String.valueOf(a / b);
+                    expression[i] = "+";
+                    if (expression[i + 2] == "*" || expression[i + 2] == "/") {
+                        expression[i + 1] = "1";
+                    } else {
+                        expression[i + 1] = "0";
+                    }
+                }
             }
         }
         double result = Double.parseDouble(expression[0]);
