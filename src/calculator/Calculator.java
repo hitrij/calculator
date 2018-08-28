@@ -16,7 +16,7 @@ class Calculator {
             if (op == "*") {
                 expression[i - 1] = String.valueOf(a * b);
                 expression[i] = "+";
-                if (expression.length <= i + 2) {
+                if (expression.length > i + 2) {
                     if (expression[i + 2] == "*" || expression[i + 2] == "/") {
                         expression[i + 1] = "1";
                     } else {
