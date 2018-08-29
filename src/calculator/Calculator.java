@@ -70,6 +70,7 @@ class Calculator {
                             }
                             expression[Brack_Start] = String.valueOf(result);
                             expression[Brack_End] = "1";
+                            //повторение алгоритма пока не закончатся скобки
                             i = -1;
                             //после скобок сложение
                         } else {
@@ -79,6 +80,7 @@ class Calculator {
                             }
                             expression[Brack_Start] = String.valueOf(result);
                             expression[Brack_End] = "0";
+                            //повторение алгоритма пока не закончатся скобки
                             i = -1;
                         }
                         //если перед скобками сложение
@@ -91,7 +93,9 @@ class Calculator {
                             }
                             expression[Brack_End] = String.valueOf(result);
                             expression[Brack_Start] = "0";
+                            //повторение алгоритма пока не закончатся скобки
                             i = -1;
+                        //если после скобок сложение
                         } else {
                             for (int k = Brack_Start; k < Brack_End; k += 2) {
                                 expression[k] = "0";
@@ -99,9 +103,11 @@ class Calculator {
                             }
                             expression[Brack_Start] = String.valueOf(result);
                             expression[Brack_End] = "0";
+                            //повторение алгоритма пока не закончатся скобки
                             i = -1;
                         }
                     }
+                //если скобки первые в выражении
                 } else {
                     for (int k = Brack_Start; k < Brack_End; k += 2) {
                         expression[k] = "0";
