@@ -32,6 +32,7 @@ class Calculator {
         return calculate(tmp);
     }
 
+
     String calculate(List<String> expression) {
         List<String> tmp = new ArrayList<>();
         double a = Double.parseDouble(expression.get(0));
